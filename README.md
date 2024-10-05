@@ -164,14 +164,6 @@ python ssh_key_manager.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-```
-MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy...
-```
-
-*Include the full MIT License text in the `LICENSE` file in your repository.*
-
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
