@@ -1,3 +1,6 @@
+"""
+Copyright © 2024 Yashodhan Kulkarni <yashodhan.kulkarni@gmail.com>
+"""
 import paramiko
 import os
 import sys
