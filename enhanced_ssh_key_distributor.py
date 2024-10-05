@@ -12,7 +12,7 @@ import pytz  # Added for time zone handling
 MAX_RETRIES = 3
 RETRY_BACKOFF = 2
 DEFAULT_TIMEOUT = 10
-MANAGED_KEY_MARKER = "#Managed by SSH Key Manager"  # Adjusted to match your format
+MANAGED_KEY_MARKER = "# Managed by SSH Key Distributor"  # Adjusted to match your format
 
 def setup_logging(debug_mode):
     """
@@ -27,7 +27,7 @@ def setup_logging(debug_mode):
 
     # Set up logging to file
     logging.basicConfig(
-        filename='ssh_key_manager.log',
+        filename='ssh_key_distributor.log',
         filemode='a',
         format='%(asctime)s - %(levelname)s - %(message)s',
         level=log_level
@@ -145,7 +145,7 @@ def distribute_public_keys_to_node(client, nodes_info, ssh_user):
 
             # Now parse the comment to extract 'Added', 'Updated', 'Rotated' times
             # Assume the comment format:
-            # root@hostname #Managed by SSH Key Manager | Added: DDMMYY-hhmm | Updated: DDMMYY-hhmm IST | Rotated: DDMMYY-hhmm
+            # root@hostname # Managed by SSH Key Distributor | Added: DDMMYY-hhmm | Updated: DDMMYY-hhmm IST | Rotated: DDMMYY-hhmm
 
             # Split comment by '|'
             comment_sections = comment.split('|')
