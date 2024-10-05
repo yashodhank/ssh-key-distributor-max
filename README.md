@@ -1,4 +1,4 @@
-# SSH Key Manager
+# SSH Key Manager (MAX)
 
 An efficient and robust SSH Key Management script for distributing, rotating, and managing SSH keys across multiple remote nodes. This script ensures secure inter-node SSH communication by automating the key distribution process, handling key rotation, and maintaining organized `authorized_keys` files with detailed metadata.
 
