@@ -1,6 +1,6 @@
-# SSH Key Manager (MAX)
+# SSH Key Distributor (MAX)
 
-An efficient and robust SSH Key Management script for distributing, rotating, and managing SSH keys across multiple remote nodes. This script ensures secure inter-node SSH communication by automating the key distribution process, handling key rotation, and maintaining organized `authorized_keys` files with detailed metadata.
+An efficient and robust SSH Key Distributor script for managing, rotating, and distributing SSH keys across multiple remote nodes. This script ensures secure inter-node SSH communication by automating the key distribution process, handling key rotation, and maintaining organized `authorized_keys` files with detailed metadata.
 
 ## Table of Contents
 
@@ -46,8 +46,8 @@ pip install paramiko pytz
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/ssh-key-manager.git
-   cd ssh-key-manager
+   git clone https://github.com/yourusername/ssh-key-distributor.git
+   cd ssh-key-distributor
    ```
 
 2. **Install Dependencies**
@@ -70,7 +70,7 @@ pip install paramiko pytz
 ### Basic Command
 
 ```bash
-python ssh_key_manager.py -u USERNAME -k /path/to/private_key -n NODE_IPS [OPTIONS]
+python ssh_key_distributor.py -u USERNAME -k /path/to/private_key -n NODE_IPS [OPTIONS]
 ```
 
 ### Options
@@ -89,19 +89,19 @@ python ssh_key_manager.py -u USERNAME -k /path/to/private_key -n NODE_IPS [OPTIO
 #### Distribute SSH Keys Without Rotation
 
 ```bash
-python ssh_key_manager.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11
+python ssh_key_distributor.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11
 ```
 
 #### Distribute SSH Keys With Rotation
 
 ```bash
-python ssh_key_manager.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11 --rotate
+python ssh_key_distributor.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11 --rotate
 ```
 
 #### Enable Debug Mode for Detailed Logging
 
 ```bash
-python ssh_key_manager.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11 --debug
+python ssh_key_distributor.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11 --debug
 ```
 
 ## Configuration
@@ -125,7 +125,7 @@ python ssh_key_manager.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11 
    - Adds all collected public keys to each node's `authorized_keys` file.
    - Uses a custom comment format for each key:
      ```
-     ssh-rsa AAAAB3... root@hostname #Managed by SSH Key Manager | Added: DDMMYY-hhmm | Updated: DDMMYY-hhmm IST | Rotated: DDMMYY-hhmm
+     ssh-rsa AAAAB3... root@hostname #Managed by SSH Key Distributor | Added: DDMMYY-hhmm | Updated: DDMMYY-hhmm IST | Rotated: DDMMYY-hhmm
      ```
 
 3. **Test Inter-node Connectivity**
@@ -137,18 +137,18 @@ python ssh_key_manager.py -u root -k ~/.ssh/id_rsa -n 192.168.1.10,192.168.1.11 
 - **Example Entry in `authorized_keys`**:
 
   ```
-  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC... root@node01 #Managed by SSH Key Manager | Added: 051023-1430 | Updated: 051023-1430 IST | Rotated: 051023-1430
+  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC... root@node01 #Managed by SSH Key Distributor | Added: 051023-1430 | Updated: 051023-1430 IST | Rotated: 051023-1430
   ```
 
 - **Fields**:
-  - **Managed by SSH Key Manager**: Marker to identify keys managed by the script.
+  - **Managed by SSH Key Distributor**: Marker to identify keys managed by the script.
   - **Added**: Timestamp when the key was first added.
   - **Updated**: Timestamp when the key was last updated.
   - **Rotated**: Timestamp when the key was last rotated.
 
 ## Logging
 
-- **Log File**: `ssh_key_manager.log`
+- **Log File**: `ssh_key_distributor.log`
 - **Log Levels**:
   - **INFO**: General information about the script's progress.
   - **DEBUG**: Detailed information for debugging (enabled with `--debug`).
@@ -175,8 +175,8 @@ Contributions are welcome! Please follow these steps:
 2. **Clone Your Fork**
 
    ```bash
-   git clone https://github.com/yourusername/ssh-key-manager.git
-   cd ssh-key-manager
+   git clone https://github.com/yourusername/ssh-key-distributor.git
+   cd ssh-key-distributor
    ```
 
 3. **Create a New Branch**
